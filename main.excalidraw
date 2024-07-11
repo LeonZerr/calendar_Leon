@@ -34,8 +34,8 @@
     },
     {
       "type": "text",
-      "version": 424,
-      "versionNonce": 1399315189,
+      "version": 427,
+      "versionNonce": 660279675,
       "isDeleted": false,
       "id": "H_ewGaYeXs90Y7BcfGVNO",
       "fillStyle": "solid",
@@ -60,7 +60,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1720706750015,
+      "updated": 1720707344054,
       "link": null,
       "locked": false,
       "fontSize": 24.64427811357942,
