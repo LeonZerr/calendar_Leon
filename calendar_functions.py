@@ -10,6 +10,8 @@ def display_current_month():
 def display_current_year():
     print()
     print(calendar.calendar(year))
-   
+
+def add_an_event(datetime,description):
+       datetime = input()
     
     
