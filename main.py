@@ -8,15 +8,13 @@ data = load_entries()
 
 def main():
     while True:
-        print("\n1. Show the current month.")
-        print("2. Show the current year.")
-        print("3. Add entry.")
-        print("4. Show specific entry.")
-        print("5. Delete entry.")
-        print("6. Change entry.")
-        print("7. Show all birthdays.")
-        print("8. Show all events.")
-        print("9. Show all meetings.")
+        print("\n1. Show the current month")
+        print("2. Show the current year")
+        print("3. Add entry")
+        print("4. Show entry")
+        print("5. Delete entry")
+        print("6. Change entry")
+        print("7. Show all (birthdays/events or meetings)")
         print("q. Exit")
         
         option = input("\nSelect an option: ")
@@ -25,17 +23,27 @@ def main():
         elif option == '2':
           display_current_year()  
         elif option == '3':
-          type = input('Choose type(B = birthday, E = event or M = meeting): ')
-          name_or_description = input('Enter the name(if birthday) or description(for an event or meeting): ')
+          type = input('Choose type(b = birthday, e = event or m = meeting): ')
+          name_or_description = input('Enter the name(birthday) or description(event/meeting): ')
           date = (input('Enter the date: '))
           add_entry(data,type,name_or_description,date)   
         elif option == '4':
-          type = input('Choose type of entry you are searching for(B = birthday, E = event or M = meeting): ')
-          name_or_description = (input('Enter the name/description of the entry: '))
+          type = input('Choose type of entry you are searching for(b = birthday, e = event or m = meeting): ')
+          name_or_description = (input('Enter the name/description of the entry you want to display: '))
+          display_entry(data,type,name_or_description)                                                        
+        elif option == '5':
+          type = input('Choose type (b = birthday, e = event or m = meeting): ')
+          name_or_description = (input('Enter the name/description of the entry you want to delete: '))
+          delete_entry(data,type,name_or_description)  
+        elif option == '6':
+          type = input('Choose type (b = birthday, e = event or m = meeting): ')
+          name_or_description = (input('Enter the name/description of the entry you want to change: ')) 
           display_entry(data,type,name_or_description)
-        
-        
-        
+          new_date = (input('Enter the new date: '))
+          change_entry(data,type,name_or_description,new_date)
+        elif option == '7':
+          type = input('Choose type (b = birthday, e = event or m = meeting): ')
+          show_all(data,type)
         elif option == 'q':
             break
         else:
