@@ -5,12 +5,12 @@ month = datetime.datetime.now().month
 import json
 
 def load_entries():
-    with open('/home/dci-student/Desktop/Python_projects/calendar_Leon/entries.json') as f:
+    with open('/home/dci-student/Desktop/calendar_Leon/entries.json') as f:
         data = json.load(f) 
     return data['entries']
 
 def save_entry(entries):
-    with open('/home/dci-student/Desktop/Python_projects/calendar_Leon/entries.json','w') as file:
+    with open('/home/dci-student/Desktop/calendar_Leon/entries.json','w') as file:
         json.dump({"entries":entries},file,indent=4)
 
 def display_current_month():                                       
