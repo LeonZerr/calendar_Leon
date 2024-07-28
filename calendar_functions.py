@@ -29,7 +29,7 @@ def add_entry(data,type,name_or_description,date):
     elif type == 'e':
         data["events"].update({name_or_description : date})   
     save_entry(data)
-    print("Entry saved!")                                                            
+    print("Entry saved successfully!")                                                            
 
 def get_entry(data,type,name_or_description):
     if type == 'b': 
@@ -67,7 +67,7 @@ def delete_entry(data,type,name_or_description):
     elif entry[0] in data["events"]:
         del data["events"][entry[0]]
     save_entry(data)      
-    print("Entry deleted!") 
+    print("Entry deleted successfully!") 
     
 def change_entry(data,type,name_or_description,new_date):
     entry = get_entry(data,type,name_or_description)  
@@ -79,7 +79,7 @@ def change_entry(data,type,name_or_description,new_date):
     elif entry[0] in data["events"]:
         data["events"].update({entry[0] : new_date})   
     save_entry(data)      
-    print("Entry changed!")  
+    print("Entry changed successfully!")  
     
 def show_all(data,type):
     if type == 'b': 

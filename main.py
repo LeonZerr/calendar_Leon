@@ -8,8 +8,8 @@ data = load_entries()
 
 def main():
     while True:
-        print("\n1. Show the current month")
-        print("2. Show the current year")
+        print("\n1. Show current month")
+        print("2. Show current year")
         print("3. Add entry")
         print("4. Show entry")
         print("5. Delete entry")
