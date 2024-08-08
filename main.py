@@ -42,7 +42,7 @@ def main():
           new_date = (input('Enter the new date: '))
           change_entry(data,type,name_or_description,new_date)
         elif option == '7':
-          type = input('Choose type (b = birthday, e = event or m = meeting): ')
+          type = input('What type of entries do you want to display? (b = birthdays, e = events or m = meetings): ')
           show_all(data,type)
         elif option == 'q':
             break
