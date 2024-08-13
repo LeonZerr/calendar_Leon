@@ -53,6 +53,7 @@ def get_entry(data,type,name_or_description):
                 return key,value
         else:
             return 'No entry found.'
+        
 
 def display_entry(data,type,name_or_description):
     entry = get_entry(data,type,name_or_description)
@@ -61,25 +62,34 @@ def display_entry(data,type,name_or_description):
 def delete_entry(data,type,name_or_description):
     entry = get_entry(data,type,name_or_description)
     if entry[0] in data["birthdays"]:
-        del data["birthdays"][entry[0]]   
+        del data["birthdays"][entry[0]] 
+        print("Entry deleted!")
     elif entry[0] in data["meetings"]:
         del data["meetings"][entry[0]]
+        print("Entry deleted!")
     elif entry[0] in data["events"]:
         del data["events"][entry[0]]
+        print("Entry deleted!")
+    elif entry[0] not in data:
+        print('No entry found.')    
     save_entry(data)      
-    print("Entry deleted!") 
+    
     
 def change_entry(data,type,name_or_description,new_date):
     entry = get_entry(data,type,name_or_description)  
-    
     if entry[0] in data["birthdays"]:
         data["birthdays"].update({entry[0] : new_date})  
+        print("Entry successfully changed!") 
     elif entry[0] in data["meetings"]:
         data["meetings"].update({entry[0] : new_date})
+        print("Entry successfully changed!") 
     elif entry[0] in data["events"]:
-        data["events"].update({entry[0] : new_date})   
+        data["events"].update({entry[0] : new_date}) 
+        print("Entry successfully changed!") 
+    elif entry[0] not in data:
+        print('No entry found.')       
     save_entry(data)      
-    print("Entry successfully changed!")  
+    
     
 def show_all(data,type):
     if type == 'b': 
