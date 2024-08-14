@@ -29,8 +29,9 @@ def add_entry(data,type,name_or_description,date):
     elif type == 'e':
         data["events"].update({name_or_description : date})   
     save_entry(data)
-    print("Entry saved!")                                                            
-
+    load_entries()
+    print("Entry saved!")  
+                                                             
 def get_entry(data,type,name_or_description):
     if type == 'b': 
         dict_birth = data["birthdays"]
@@ -54,10 +55,10 @@ def get_entry(data,type,name_or_description):
         else:
             return 'No entry found.'
         
-
 def display_entry(data,type,name_or_description):
     entry = get_entry(data,type,name_or_description)
     print(f'{name_or_description} : {entry[1]}')           
+    
     
 def delete_entry(data,type,name_or_description):
     entry = get_entry(data,type,name_or_description)
@@ -72,7 +73,8 @@ def delete_entry(data,type,name_or_description):
         print("Entry deleted!")
     elif entry[0] not in data:
         print('No entry found.')    
-    save_entry(data)      
+    save_entry(data) 
+    load_entries()     
     
     
 def change_entry(data,type,name_or_description,new_date):
@@ -89,7 +91,7 @@ def change_entry(data,type,name_or_description,new_date):
     elif entry[0] not in data:
         print('No entry found.')       
     save_entry(data)      
-    
+    load_entries()
     
 def show_all(data,type):
     if type == 'b': 
