@@ -93,10 +93,16 @@ def change_entry(data,type,name_or_description,new_date):
     
 def show_all(data,type):
     if type == 'b': 
-        print(data["birthdays"])
+        dict_birth = data["birthdays"]
+        for key,value in dict_birth.items():
+            print(key,value)
     elif type == 'm':
-        print(data["meetings"])
+        dict_meet = data["meetings"]
+        for key,value in dict_meet.items():
+            print(key,value)
     elif type == 'e':
-        print(data["events"])
+        dict_event = data["events"]
+        for key,value in dict_event.items():
+            print(key,value)    
     
     
