@@ -2,15 +2,15 @@
     "entries": {
         "birthdays": {
             "Leon": "19.06.1999",
-            "Oliver": "12.05.1997",
-            "Tom": "27.02.1999"
+            "Oliver": "12.05.1997"
         },
         "events": {
-            "Dentist": "28.07.24 13:45",
-            "Theater": "22.08.2024 19:00"
+            "Dentist": "28.09.24 - 16:45",
+            "Theater": "22.10.24 - 13:00"
         },
         "meetings": {
-            "DCI Mentoring": "12.08.2024 13:00"
+            "DCI Mentoring": "26.08.24 - 13:00",
+            "Group Project": "29.08.24 - 13:00"
         }
     }
 }
