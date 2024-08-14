@@ -55,10 +55,26 @@ def get_entry(data,type,name_or_description):
         else:
             return 'No entry found.'
         
-def display_entry(data,type,name_or_description):
+def display_entry(data,type,name_or_description):  
     entry = get_entry(data,type,name_or_description)
-    print(f'{name_or_description} : {entry[1]}')           
-    
+    if type == 'b': 
+        dict_birth = data["birthdays"]
+        if name_or_description in dict_birth:
+            print(f'{name_or_description} : {entry[1]}') 
+        else:
+            print("No entry found.")    
+    if type == 'm': 
+        dict_meet = data["meetings"]
+        if name_or_description in dict_meet:
+            print(f'{name_or_description} : {entry[1]}') 
+        else:
+            print("No entry found.")           
+    if type == 'e': 
+        dict_event = data["events"]
+        if name_or_description in dict_event:
+            print(f'{name_or_description} : {entry[1]}') 
+        else:
+            print("No entry found.")                   
     
 def delete_entry(data,type,name_or_description):
     entry = get_entry(data,type,name_or_description)
@@ -74,8 +90,7 @@ def delete_entry(data,type,name_or_description):
     elif entry[0] not in data:
         print('No entry found.')    
     save_entry(data) 
-    load_entries()     
-    
+    load_entries()       
     
 def change_entry(data,type,name_or_description,new_date):
     entry = get_entry(data,type,name_or_description)  
