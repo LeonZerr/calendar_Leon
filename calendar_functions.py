@@ -5,23 +5,28 @@ month = datetime.datetime.now().month
 import json
 
 def load_entries():
+    '''Loads entries from json file.'''
     with open('/home/dci-student/Desktop/calendar_Leon/entries.json') as f:
         data = json.load(f) 
     return data['entries']
 
 def save_entry(entries):
+    '''Saves entries and stores them in a json file. '''
     with open('/home/dci-student/Desktop/calendar_Leon/entries.json','w') as file:
         json.dump({"entries":entries},file,indent=4)
 
-def display_current_month():                                       
+def display_current_month():
+    '''Calculates and displays the current month. '''                                      
     print()
     print(calendar.month(year,month))
 
-def display_current_year():                                        
+def display_current_year():
+    '''Calculates and displays the current year. '''                               
     print()
     print(calendar.calendar(year))
 
 def add_entry(data,type,name_or_description,date):
+    '''Assigns the data of new entries and stores them in a specific dictionary (json file).'''
     if type == 'b':                                    
         data["birthdays"].update({name_or_description : date})               
     elif type == 'm':
@@ -33,6 +38,7 @@ def add_entry(data,type,name_or_description,date):
     print("Entry saved!")  
                                                              
 def get_entry(data,type,name_or_description):
+    '''Searches a specific entry in the dictionary's (within the json file).'''
     if type == 'b': 
         dict_birth = data["birthdays"]
         for key,value in dict_birth.items():
@@ -56,6 +62,7 @@ def get_entry(data,type,name_or_description):
             return 'No entry found.'
         
 def display_entry(data,type,name_or_description):  
+    '''Displays specific entry (which the user is searching for).'''
     entry = get_entry(data,type,name_or_description)
     if type == 'b': 
         dict_birth = data["birthdays"]
@@ -77,6 +84,7 @@ def display_entry(data,type,name_or_description):
             print("No entry found.")                   
     
 def delete_entry(data,type,name_or_description):
+    '''Deletes a selected entry from the dictionary (within the json file).'''
     entry = get_entry(data,type,name_or_description)
     if entry[0] in data["birthdays"]:
         del data["birthdays"][entry[0]] 
@@ -93,6 +101,7 @@ def delete_entry(data,type,name_or_description):
     load_entries()       
     
 def change_entry(data,type,name_or_description,new_date):
+    '''Allows the user to change the date/time (value) of an entry.'''
     entry = get_entry(data,type,name_or_description)  
     if entry[0] in data["birthdays"]:
         data["birthdays"].update({entry[0] : new_date})  
@@ -109,6 +118,7 @@ def change_entry(data,type,name_or_description,new_date):
     load_entries()
     
 def show_all(data,type):
+    '''Lists all entries of a type.'''
     if type == 'b': 
         dict_birth = data["birthdays"]
         for key,value in dict_birth.items():
