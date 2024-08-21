@@ -23,20 +23,20 @@ def main():
         elif option == '2':
           display_current_year()  
         elif option == '3':
-          type = input('Choose type(b=birthday, e=event or m=meeting): ')
+          type = input('Choose a type (b=birthday, e=event or m=meeting): ')
           name_or_description = input('Please enter a name (if type=birthday) or description (if type=event/meeting): ')
           date = (input('Enter the date: '))
           add_entry(data,type,name_or_description,date)   
         elif option == '4':
-          type = input('Choose type of entry you are searching for(b=birthday, e=event or m=meeting): ')
+          type = input('Choose a type (b=birthday, e=event or m=meeting): ')
           name_or_description = (input('Enter the name/description of the entry you want to display: '))
           display_entry(data,type,name_or_description)                                                        
         elif option == '5':
-          type = input('Choose type (b=birthday, e=event or m=meeting): ')
+          type = input('Choose a type (b=birthday, e=event or m=meeting): ')
           name_or_description = (input('Enter the name/description of the entry you want to delete: '))
           delete_entry(data,type,name_or_description)  
         elif option == '6':
-          type = input('Choose type (b=birthday, e=event or m=meeting): ')
+          type = input('Choose a type (b=birthday, e=event or m=meeting): ')
           name_or_description = (input('Enter the name/description of the entry you want to change: ')) 
           display_entry(data,type,name_or_description)
           new_date = (input('Enter the new date: '))
